@@ -10,14 +10,41 @@ Memory Forge 用来把项目中的结构信息、工程规范、工具用法和�
 
 ## 快速开始
 
-### 安装
+### 安装方式
 
-1. 克隆此仓库
-2. 将 `SKILL.md` 文件复制到你的项目 `.claude/skills/memory-forge/` 目录下
+#### 方式一：Git Submodule（推荐）
+
+使用 git submodule 引用你的 skill，保持独立更新：
+
+```bash
+cd your-project
+git submodule add https://github.com/Huang-404-Q/memory-forge.git .claude/skills/memory-forge
+```
+
+更新 skill：
+```bash
+git submodule update --remote .claude/skills/memory-forge
+```
+
+#### 方式二：Git Clone
+
+克隆到本地后复制到项目中：
+
+```bash
+# 克隆到本地
+git clone https://github.com/Huang-404-Q/memory-forge.git
+
+# 复制到你的项目
+mkdir -p your-project/.claude/skills/memory-forge
+cp memory-forge/SKILL.md your-project/.claude/skills/memory-forge/
+```
+
+#### 方式三：直接下载
 
 ```bash
 mkdir -p .claude/skills/memory-forge
-cp SKILL.md .claude/skills/memory-forge/
+curl -sL https://raw.githubusercontent.com/Huang-404-Q/memory-forge/main/SKILL.md \
+  -o .claude/skills/memory-forge/SKILL.md
 ```
 
 ### 使用
